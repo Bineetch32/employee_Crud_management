@@ -1,0 +1,13 @@
+{
+  "Employee": [
+    {
+      "id": 1,
+      "ename": "amresh kumar",
+      "email": "amresh23@gmail.com",
+      "mobile": "8765676767",
+      "designation": "ME Engineer",
+      "username": "amresh23",
+      "password": "amresh23@"
+    }
+  ]
+}

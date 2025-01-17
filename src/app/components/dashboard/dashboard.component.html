@@ -1,0 +1,18 @@
+<section class="course">
+    <div class="container">
+        <h1 class="text-center">All Courses Available Here</h1>
+        <h2 class="text-center">Top Companies Offer These Courses to Their Employees</h2>
+        <p class="text-center">These courses were selected for our collection of top-rated courses trusted by businesses worldwide</p>
+    
+        <div class="row mt-5">
+            <div class="col-lg-3 mb-5" *ngFor="let cs of course">
+                <div class="box shadow-sm">
+                    <img [src]="cs.image" width="100%" alt="{{cs.name}}">
+                    <h4 class="mt-2">{{cs.name}}</h4>
+                    <p class="mt-2">{{cs.description}}</p>
+                    <button class="btn btn-primary btn-sm mt-2" [routerLink]="'/dashboard/course-detail' + cs.id">Watch Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

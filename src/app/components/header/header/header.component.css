@@ -1,0 +1,7 @@
+div {
+    width: 100px;
+    /* height: 100px; */
+    background-color: rgb(26, 28, 6);
+    animation-name: header;
+    animation-duration: 4s;
+  }

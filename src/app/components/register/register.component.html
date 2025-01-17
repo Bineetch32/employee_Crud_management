@@ -1,0 +1,55 @@
+<div class="container vh-100">
+    <div class="row justify-content-center h-100">
+        <div class="card my-auto shadow">
+            <div class="card-body px-5">
+                <h2 style="text-align: center; color: darkviolet;">Register Here</h2>
+            </div>
+            <p style="color: lightslategray; text-align: center;">Please enter your registration details</p>
+            
+            <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" style="text-align: center;">
+                <table class="table table-primary" style="width: 400px; text-align: center;">
+                    <tr>
+                        <td> Name</td>
+                        <td> <input type="text" 
+                            formControlName="ename" 
+                            placeholder="Enter name"></td>
+                    </tr>
+                    <tr>
+                        <td> Email</td>
+                        <td> <input type="text" 
+                            formControlName="email" 
+                            placeholder="Enter email"></td>
+                    </tr>
+                    <tr>
+                        <td> Mobile</td>
+                        <td> <input type="text" 
+                            formControlName="mobile" 
+                            placeholder="Enter mobile no"></td>
+                    </tr>
+                    <tr>
+                        <td> Designation</td>
+                        <td> <input type="text" 
+                            formControlName="designation" 
+                            placeholder="Enter Designation"></td>
+                    </tr>
+                    <tr>
+                        <td> Username</td>
+                        <td> <input type="text" 
+                            formControlName="username" 
+                            placeholder="Enter username"></td>
+                    </tr>
+                    <tr>
+                        <td> Password</td>
+                        <td><input type="password" 
+                            formControlName="password" 
+                            placeholder="Enter password"
+                            autocomplete="current-password"></td>
+                    </tr>
+                </table>
+                <button class="btn btn-primary" type="submit">Register</button>
+                <a class="btn btn-danger" style="text-align: right;" routerLink="/login">Back</a>
+          
+            </form>
+        </div>
+    </div>
+</div>

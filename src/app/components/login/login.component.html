@@ -1,0 +1,73 @@
+<div class="container vh-100">
+    <div class="row justify-content-center h-100">
+        <div class="card my-auto shadow">
+            <div class="card-body px-5">
+                <!-- <img src="../../assets/1152.jpg"> -->
+                <div class="text-center">
+                    <fa-icon [icon]="faLock" class="fa-3x"></fa-icon>
+                </div>
+                <div class="text-center">
+                    <h2>Welcome</h2>
+                </div>
+                <p style="color: lightslategray; text-align: center;">Please enter your login details</p>
+                 <!-- Add user type selection -->
+                 <div style="text-align: center;">
+                    <label>
+                        <input type="radio" 
+                        name="userType" 
+                        value="user" 
+                        (change)="userType = 'user'"> User</label>
+                    
+                    <label style="margin-left: 20px;">
+                        <input type="radio" 
+                        name="userType" 
+                        value="employer" 
+                        (change)="userType = 'employer'"> Employer</label>
+                    
+                </div>
+                    
+
+                <form [formGroup]="loginForm" (ngSubmit)="onLoginSubmit()">
+                    <!--login form start -->
+                    <table style="width: 400px; text-align: center;">
+                        <div style="text-align: center;" class="tab-pane fade active show" id="account" role="tabpanel"
+                            aria-labelledby="account-tab">
+
+                            <div class="form-group">
+                                <input type="text" 
+                                class="form-control" 
+                                placeholder="Username"
+                                formControlName="username">
+                            </div>
+
+                            <div class="form-group">
+                                <input type="password" 
+                                class="form-control" 
+                                placeholder="Password"
+                                formControlName="password">
+                                <small id="passwordHelp" class="form-text text-muted">We'll never share your password with anyone else.</small>
+                            </div>
+                                   
+
+                            <div class="form-button"><button class="btn btn-primary col-lg-12"
+                                    type="submit">Login</button>
+                            </div>
+
+                        </div>
+                    </table>
+                    <!--login form end -->
+                </form>
+
+            </div>
+
+            <div style="text-align: center; color: red;">
+                <a routerLink="register">Click Here to Register</a>
+            </div>
+
+
+
+
+
+        </div>
+    </div>
+</div>

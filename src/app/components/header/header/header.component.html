@@ -1,0 +1,30 @@
+<nav class="navbar navbar-dark bg-dark navbar-expand-md">
+    <a href="#" class="navbar-brand">Mock Project</a>
+    
+    
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar">
+    
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-collapse collapse pull-right" id="navbar">
+
+            <ul class="navbar-nav">
+                
+                <li class="nav-item" routerLinkActive="active"><a routerLink="dashboard" class="nav-link">Home</a></li>
+                
+                <li class="nav-item" routerLinkActive="active"><a routerLink="company" class="nav-link">Company</a></li>
+                
+                <li class="nav-item" routerLinkActive="active"><a routerLink="employee" class="nav-link">Employee</a></li>
+                
+                <li class="nav-item" routerLinkActive="active"><a routerLink="about-us" class="nav-link">AboutUs</a></li>
+                
+                <li class="nav-item" routerLinkActive="active"><a routerLink="contact-us" class="nav-link">Contact</a></li>
+        
+               <button style="margin-left: 285%;" class='btn btn-success pull-right' routerLink="/login">Logout </button>
+                
+                
+            </ul>
+        </div>
+
+    </nav>
+    <router-outlet></router-outlet>

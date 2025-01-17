@@ -1,0 +1,13 @@
+body
+{
+    padding: 10px;
+    background-color: #942323d9;
+    font-weight: bold;
+
+}
+
+.card-body
+{
+    color: rgba(9, 18, 6, 0.902);
+}
+
