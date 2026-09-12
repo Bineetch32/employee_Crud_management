@@ -1,65 +1,41 @@
 # Employee CRUD Management
 
-A modern Angular application for managing employee records through a clean CRUD workflow. The project demonstrates component-based UI development, form handling, routing, reusable services, and HTTP-based data operations.
-
-## Highlights
-
-- Employee create, read, update, and delete workflows
-- Angular components and services with a structured application layout
-- Reactive/form-based employee data handling
-- HTTP communication through Angular `HttpClient`
-- Bootstrap-based responsive UI
-- Font Awesome icons for interface actions
+Angular application for managing employee records using CRUD operations and a REST API.
 
 ## Tech Stack
 
-- **Angular 19**
-- **TypeScript 5.6**
-- **RxJS 7.8**
-- **Bootstrap 5**
-- **Angular HttpClient**
-- **Font Awesome**
+- Angular 19
+- TypeScript
+- Bootstrap 5
+- RxJS
+- Angular HttpClient
 
-## Project Structure
+## Features
 
-```text
-src/app/
-├── components/   # UI components
-├── model/        # Employee data model
-└── service/      # Reusable HTTP/data services
-```
+- Add employees
+- View employees
+- Update employees
+- Delete employees
+- Form handling
+- REST API integration
+- Responsive UI
 
-## Getting Started
+## API
 
-### Prerequisites
-
-- Node.js
-- npm
-- Angular CLI
-
-### Install
-
-```bash
-npm install
-```
-
-### Run
-
-```bash
-ng serve
-```
-
-Open `http://localhost:4200/` in your browser.
-
-## Data API
-
-The current service is configured for an employee REST endpoint at:
+The application currently uses:
 
 ```text
 http://localhost:3000/Employee
 ```
 
-Run the corresponding local API/mock server when using the application's data operations.
+## Run Locally
+
+```bash
+npm install
+ng serve
+```
+
+Open `http://localhost:4200/`.
 
 ## Build
 
@@ -67,11 +43,4 @@ Run the corresponding local API/mock server when using the application's data op
 ng build
 ```
 
-## Why This Project
-
-This project showcases practical Angular application development: separating UI components from data services, working with forms, and integrating a frontend with HTTP-based CRUD operations.
-
----
-
-**Author:** Bineet Chauhan  
-**GitHub:** [Bineetch32](https://github.com/Bineetch32)
+**Author:** Bineet Chauhan
