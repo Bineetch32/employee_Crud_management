@@ -1,0 +1,92 @@
+.update-page {
+  min-height: calc(100vh - 70px);
+  padding: 40px 20px;
+  background: #f5f7fb;
+}
+
+.update-card {
+  max-width: 850px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  padding: 30px;
+}
+
+.update-header {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e9ecef;
+  margin-bottom: 25px;
+}
+
+.update-header h2 {
+  margin: 0;
+  color: #1f2937;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.update-header p {
+  margin: 6px 0 0;
+  color: #6b7280;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 7px;
+  color: #374151;
+  font-weight: 600;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 11px 13px;
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+  font-size: 15px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.form-group input:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.12);
+}
+
+.form-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.form-actions button {
+  min-width: 120px;
+}
+
+@media (max-width: 600px) {
+  .update-page {
+    padding: 20px 12px;
+  }
+
+  .update-card {
+    padding: 20px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .form-actions button {
+    width: 100%;
+  }
+}
