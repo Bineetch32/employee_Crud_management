@@ -10,7 +10,8 @@
 
     <div class="search-box">
       <label for="employeeSearch">Search Employee</label>
-      <input id="employeeSearch" type="text" class="form-control" [(ngModel)]="searchText"
+      <input #searchBox id="employeeSearch" type="text" class="form-control"
+        (input)="searchText = searchBox.value"
         placeholder="Search by name, email, designation or username">
     </div>
 
