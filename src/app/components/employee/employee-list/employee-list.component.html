@@ -38,8 +38,8 @@
               <td><span class="designation">{{ e.designation }}</span></td>
               <td>{{ e.username }}</td>
               <td class="actions">
-                <a class="btn btn-sm btn-outline-primary" [routerLink]="['employee-detail', e.id]">View</a>
-                <a class="btn btn-sm btn-primary" [routerLink]="['update']" [state]="e">Edit</a>
+                <button class="btn btn-sm btn-outline-primary" (click)="viewEmployee(e.id)">View</button>
+                <button class="btn btn-sm btn-primary" (click)="editEmployee(e)">Edit</button>
                 <button class="btn btn-sm btn-outline-danger" (click)="deleteData(e.id)">Delete</button>
               </td>
             </tr>
