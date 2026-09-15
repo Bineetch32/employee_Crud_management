@@ -1,0 +1,105 @@
+.employee-page {
+  min-height: 100vh;
+  background-color: #f5f7fb;
+}
+
+.page-header {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+.page-header h1 {
+  font-size: 28px;
+  color: #222;
+  margin-bottom: 5px;
+}
+
+.page-header p {
+  color: #6c757d;
+  margin-bottom: 0;
+}
+
+.employee-count {
+  background-color: #eaf2ff;
+  color: #0d6efd;
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+.search-box,
+.table-box,
+.no-data {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 20px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+.search-box label {
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.search-box input {
+  max-width: 600px;
+}
+
+.table {
+  margin-bottom: 0;
+}
+
+.table th {
+  background-color: #f8f9fa;
+  color: #555;
+  white-space: nowrap;
+}
+
+.designation {
+  background-color: #f1f3f5;
+  padding: 5px 9px;
+  border-radius: 15px;
+  font-size: 13px;
+}
+
+.actions {
+  white-space: nowrap;
+}
+
+.actions .btn {
+  margin-right: 5px;
+}
+
+.no-data {
+  text-align: center;
+  padding: 45px 20px;
+}
+
+.no-data h3 {
+  color: #333;
+}
+
+.no-data p {
+  color: #777;
+}
+
+@media screen and (max-width: 600px) {
+  .page-header {
+    display: block;
+  }
+
+  .employee-count {
+    display: inline-block;
+    margin-top: 15px;
+  }
+
+  .page-header h1 {
+    font-size: 24px;
+  }
+}
