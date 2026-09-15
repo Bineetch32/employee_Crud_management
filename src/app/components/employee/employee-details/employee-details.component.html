@@ -1,31 +1,42 @@
+<div class="details-page">
+  <div class="details-card">
+    <div class="details-header">
+      <div>
+        <h2>Employee Details</h2>
+        <p>View employee information</p>
+      </div>
+      <span class="employee-id">ID: {{ employeeObj.id }}</span>
+    </div>
 
-<div class="jumbotron"style="text-align:center" >
-    <table class="table table-dark center " style="text-align:center" >
-        <tr>
-            <td> Name</td>
-            <td> <input type="text"value={{employeeObj.ename}}></td>
-        </tr>
-        <tr>
-            <td> Email</td>
-            <td> <input type="text" value={{employeeObj.email}}></td>
-        </tr>
-        <tr>
-            <td> Mobile</td>
-            <td> <input type="text" value={{employeeObj.mobile}}></td>
-        </tr>
-        <tr>
-            <td> Designation</td>
-            <td> <input type="text" value={{employeeObj.designation}}></td>
-        </tr>
-        <tr>
-            <td> Username</td>
-            <td> <input type="text" value={{employeeObj.username}}></td>
-        </tr>
-        <tr>
-            <td> password</td>
-            <td> <input type="text" value={{employeeObj.password}}></td>
-        </tr>
-    </table>
-    <button class="btn btn-info float-right" (click)="getback()">Go Back</button>
+    <div class="details-grid">
+      <div class="detail-item">
+        <span>Name</span>
+        <strong>{{ employeeObj.ename }}</strong>
+      </div>
+      <div class="detail-item">
+        <span>Email</span>
+        <strong>{{ employeeObj.email }}</strong>
+      </div>
+      <div class="detail-item">
+        <span>Mobile</span>
+        <strong>{{ employeeObj.mobile }}</strong>
+      </div>
+      <div class="detail-item">
+        <span>Designation</span>
+        <strong>{{ employeeObj.designation }}</strong>
+      </div>
+      <div class="detail-item">
+        <span>Username</span>
+        <strong>{{ employeeObj.username }}</strong>
+      </div>
+      <div class="detail-item">
+        <span>Password</span>
+        <strong>••••••••</strong>
+      </div>
+    </div>
+
+    <div class="details-actions">
+      <button class="btn btn-primary" type="button" (click)="getback()">Go Back</button>
+    </div>
+  </div>
 </div>
-<router-outlet></router-outlet>
