@@ -1,35 +1,49 @@
-<p>Update Employee</p>
-<form [formGroup]="updateForm" (ngSubmit)="onSubmit()">
-  <div class="jumbotron" style="text-align:center">
-    <h5 style="text-align: center; color: darkviolet;">! Update Here !</h5>
-    <table class="table table-dark center" style="text-align:center">
-      <tr>
-        <td>Name</td>
-        <td><input type="text" formControlName="ename" placeholder="Enter name"></td>
-      </tr>
-      <tr>
-        <td>Email</td>
-        <td><input type="email" formControlName="email" placeholder="Enter email"></td>
-      </tr>
-      <tr>
-        <td>Mobile</td>
-        <td><input type="text" formControlName="mobile" placeholder="Enter mobile no"></td>
-      </tr>
-      <tr>
-        <td>Designation</td>
-        <td><input type="text" formControlName="designation" placeholder="Enter designation"></td>
-      </tr>
-      <tr>
-        <td>Username</td>
-        <td><input type="text" formControlName="username" placeholder="Enter username"></td>
-      </tr>
-      <tr>
-        <td>Password</td>
-        <td><input type="password" formControlName="password" placeholder="Enter password"></td>
-      </tr>
-    </table>
-    <button class="btn btn-primary" type="submit">Update</button>
-    &nbsp;&nbsp;
-    <button class="btn btn-primary" type="button" (click)="goBack()">Back</button>
+<div class="update-page">
+  <div class="update-card">
+    <div class="update-header">
+      <div>
+        <h2>Update Employee</h2>
+        <p>Edit employee information and save the changes.</p>
+      </div>
+    </div>
+
+    <form [formGroup]="updateForm" (ngSubmit)="onSubmit()">
+      <div class="form-grid">
+        <div class="form-group">
+          <label for="ename">Name</label>
+          <input id="ename" type="text" formControlName="ename" placeholder="Enter name">
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input id="email" type="email" formControlName="email" placeholder="Enter email">
+        </div>
+
+        <div class="form-group">
+          <label for="mobile">Mobile</label>
+          <input id="mobile" type="text" formControlName="mobile" placeholder="Enter mobile number">
+        </div>
+
+        <div class="form-group">
+          <label for="designation">Designation</label>
+          <input id="designation" type="text" formControlName="designation" placeholder="Enter designation">
+        </div>
+
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input id="username" type="text" formControlName="username" placeholder="Enter username">
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input id="password" type="password" formControlName="password" placeholder="Enter password">
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <button class="btn btn-primary" type="submit">Save Changes</button>
+        <button class="btn btn-outline-secondary" type="button" (click)="goBack()">Cancel</button>
+      </div>
+    </form>
   </div>
-</form>
+</div>
