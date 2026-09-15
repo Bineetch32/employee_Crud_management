@@ -1,18 +1,88 @@
-<section class="course">
-    <div class="container">
-        <h1 class="text-center">All Courses Available Here</h1>
-        <h2 class="text-center">Top Companies Offer These Courses to Their Employees</h2>
-        <p class="text-center">These courses were selected for our collection of top-rated courses trusted by businesses worldwide</p>
-    
-        <div class="row mt-5">
-            <div class="col-lg-3 mb-5" *ngFor="let cs of course">
-                <div class="box shadow-sm">
-                    <img [src]="cs.image" width="100%" alt="{{cs.name}}">
-                    <h4 class="mt-2">{{cs.name}}</h4>
-                    <p class="mt-2">{{cs.description}}</p>
-                    <button class="btn btn-primary btn-sm mt-2" [routerLink]="'/dashboard/course-detail' + cs.id">Watch Now</button>
-                </div>
-            </div>
-        </div>
+<section class="dashboard">
+  <div class="container py-4">
+    <div class="welcome-box">
+      <div>
+        <h1>Employee Management Dashboard</h1>
+        <p>Manage employees and keep your company information organized.</p>
+      </div>
+      <a class="btn btn-primary" routerLink="/login/header/employee/employee-list">View Employees</a>
     </div>
+
+    <div class="row mt-4">
+      <div class="col-md-6 mb-3">
+        <div class="stat-card">
+          <p>Total Employees</p>
+          <h2>{{ totalEmployees }}</h2>
+          <span>Employees registered in the system</span>
+        </div>
+      </div>
+
+      <div class="col-md-6 mb-3">
+        <div class="stat-card">
+          <p>Designations</p>
+          <h2>{{ totalDesignations }}</h2>
+          <span>Different employee roles</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-box mt-3">
+      <div class="section-title">
+        <div>
+          <h3>Recent Employees</h3>
+          <p>Latest employees available in the system</p>
+        </div>
+        <a routerLink="/login/header/employee/employee-list">View All</a>
+      </div>
+
+      <div class="table-responsive" *ngIf="employees.length > 0; else noEmployees">
+        <table class="table align-middle">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Designation</th>
+              <th>Email</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let e of employees | slice:0:5">
+              <td>{{ e.id }}</td>
+              <td>{{ e.ename | uppercase }}</td>
+              <td>{{ e.designation }}</td>
+              <td>{{ e.email }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <ng-template #noEmployees>
+        <p class="empty-message">No employees found. Register an employee to see the data here.</p>
+      </ng-template>
+    </div>
+
+    <div class="quick-box mt-4">
+      <h3>Quick Actions</h3>
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <a class="quick-action" routerLink="/login/header/employee/employee-list">
+            <strong>Employee List</strong>
+            <span>View, update and delete employees</span>
+          </a>
+        </div>
+        <div class="col-md-4 mb-3">
+          <a class="quick-action" routerLink="/login/header/company">
+            <strong>Company</strong>
+            <span>View company information</span>
+          </a>
+        </div>
+        <div class="col-md-4 mb-3">
+          <a class="quick-action" routerLink="/login/header/about-us">
+            <strong>About Project</strong>
+            <span>Learn about this application</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
