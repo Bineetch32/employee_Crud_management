@@ -1,40 +1,33 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { CommonService } from '../../service/common.service';
+import { Employee } from '../../model/employee';
 
 @Component({
   selector: 'app-dashboard',
   standalone: false,
-  
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })
-export class DashboardComponent {
+export class DashboardComponent implements OnInit {
 
-  course = [
-    {
-      'id': 1,
-      'name': 'Learn Angular',
-      'description': 'This course teaches Angular from basic to advanced level by creating a Customer data entry project.',
-      'image': '../../assets/angular.jpg'
-    },
-    {
-      'id': 2,
-      'name': 'Learn Typescript',
-      'description': 'You will learn how to apply the JavaScript. This will help you build your own programming experience and give your code more structure.',
-      'image': '../../assets/typescript.jpg'
-    },
-    {
-      'id': 3,
-      'name': 'Learn Nodejs',
-      'description': 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
-      'image': '../../assets/nodejs.jpg'
-    },
-    {
-      'id': 4,
-      'name': 'Learn Reactjs',
-      'description': 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
-      'image': '../../assets/reactjs.jpg'
-    }
-  ];
+  employees: Employee[] = [];
+  totalEmployees = 0;
+  totalDesignations = 0;
 
+  constructor(private cs: CommonService) { }
+
+  ngOnInit(): void {
+    this.cs.getData().subscribe((data: Employee[]) => {
+      this.employees = data;
+      this.totalEmployees = data.length;
+
+      const designations: string[] = [];
+      data.forEach(e => {
+        if (e.designation && !designations.includes(e.designation)) {
+          designations.push(e.designation);
+        }
+      });
+      this.totalDesignations = designations.length;
+    });
+  }
 }
-
