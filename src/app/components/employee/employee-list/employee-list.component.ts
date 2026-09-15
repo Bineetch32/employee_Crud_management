@@ -46,11 +46,16 @@ export class EmployeeListComponent implements OnInit {
     });
   }
 
-  deleteData(id: number): void {
+  deleteData(employee: Employee): void {
+    if (employee.id == null) {
+      alert('Employee ID not found.');
+      return;
+    }
+
     if (confirm('Are you sure you want to delete this employee?')) {
-      this.cs.deleteData(id).subscribe({
+      this.cs.deleteData(employee.id).subscribe({
         next: () => {
-          this.emp = this.emp.filter(e => e.id !== id);
+          this.emp = this.emp.filter(e => e.id !== employee.id);
           alert('Employee deleted successfully.');
         },
         error: () => {
