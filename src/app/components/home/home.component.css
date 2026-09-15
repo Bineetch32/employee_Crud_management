@@ -8,16 +8,24 @@
 
 .homecontent
 {
-        position: absolute;
-        top: 50%;
-        left: 40%;
-        transform: translate(-50%,-50%);
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    transform: translate(-50%,-50%);
+    text-align: center;
 }
+
 .homecontent h1
 {
     color: #ffffff;
     font-size: 50px;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.65);
+    padding: 15px 25px;
+    border-radius: 10px;
+    text-shadow: 2px 2px 4px #000000;
 }
+
 .homecontent a
 {
     margin-top: 10px;
@@ -26,11 +34,12 @@
 @media screen and (max-width:600px)
 {
     .home img
-{
-    height: 1000px;
-}
+    {
+        height: 1000px;
+    }
+
     .homecontent h1
-{
-    font-size: 40px;        
-}
+    {
+        font-size: 40px;
+    }
 }
