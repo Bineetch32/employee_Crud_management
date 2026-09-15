@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CommonService } from '../../../service/common.service';
 import { Employee } from '../../../model/employee';
 
@@ -12,7 +13,7 @@ export class EmployeeListComponent implements OnInit {
   emp: Employee[] = [];
   searchText = '';
 
-  constructor(public cs: CommonService) { }
+  constructor(public cs: CommonService, private router: Router) { }
 
   ngOnInit(): void {
     this.cs.getData().subscribe((data: Employee[]) => {
@@ -35,10 +36,26 @@ export class EmployeeListComponent implements OnInit {
     );
   }
 
+  viewEmployee(id: number): void {
+    this.router.navigate(['/login/header/employee/employee-list/employee-detail', id]);
+  }
+
+  editEmployee(employee: Employee): void {
+    this.router.navigate(['/login/header/employee/employee-list/update'], {
+      state: employee
+    });
+  }
+
   deleteData(id: number): void {
     if (confirm('Are you sure you want to delete this employee?')) {
-      this.cs.deleteData(id).subscribe(() => {
-        this.emp = this.emp.filter(e => e.id !== id);
+      this.cs.deleteData(id).subscribe({
+        next: () => {
+          this.emp = this.emp.filter(e => e.id !== id);
+          alert('Employee deleted successfully.');
+        },
+        error: () => {
+          alert('Employee could not be deleted. Please check the server.');
+        }
       });
     }
   }
