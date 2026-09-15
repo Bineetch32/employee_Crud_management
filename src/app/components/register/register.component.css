@@ -1,0 +1,117 @@
+:host {
+    display: block;
+    min-height: 100vh;
+    background-color: #f5f7fb;
+}
+
+.container.vh-100 {
+    min-height: 100vh !important;
+    height: auto !important;
+    max-width: 100%;
+    padding: 40px 15px;
+}
+
+.row {
+    width: 100%;
+    margin: 0;
+}
+
+.card {
+    width: 500px;
+    max-width: 100%;
+    margin: auto !important;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12) !important;
+}
+
+.card-body {
+    padding: 30px 35px 10px;
+}
+
+.card h2 {
+    color: #333 !important;
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+form {
+    padding: 0 35px 30px;
+}
+
+table.table {
+    width: 100% !important;
+    margin-bottom: 25px;
+    background-color: transparent !important;
+}
+
+table.table td {
+    padding: 8px 5px;
+    vertical-align: middle;
+    background-color: transparent !important;
+    border: none;
+}
+
+table.table td:first-child {
+    width: 35%;
+    text-align: left;
+    font-weight: 500;
+    color: #333;
+}
+
+table.table td:last-child {
+    width: 65%;
+}
+
+input.form-control,
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+
+input:focus {
+    border-color: #0d6efd;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(13, 110, 253, 0.15);
+}
+
+button,
+form a {
+    min-width: 100px;
+    margin: 0 5px;
+}
+
+@media screen and (max-width: 600px) {
+    .container.vh-100 {
+        padding: 20px 10px;
+    }
+
+    .card-body {
+        padding: 25px 20px 10px;
+    }
+
+    form {
+        padding: 0 20px 25px;
+    }
+
+    table.table td {
+        display: block;
+        width: 100% !important;
+        padding: 5px 0;
+    }
+
+    table.table td:first-child {
+        text-align: left;
+        padding-top: 10px;
+    }
+
+    .card h2 {
+        font-size: 26px;
+    }
+}
