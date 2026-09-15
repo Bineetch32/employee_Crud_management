@@ -10,6 +10,7 @@ import { Employee } from '../../../model/employee';
 })
 export class EmployeeListComponent implements OnInit {
   emp: Employee[] = [];
+  searchText = '';
 
   constructor(public cs: CommonService) { }
 
@@ -19,9 +20,26 @@ export class EmployeeListComponent implements OnInit {
     });
   }
 
+  getFilteredEmployees(): Employee[] {
+    const search = this.searchText.toLowerCase();
+
+    if (!search) {
+      return this.emp;
+    }
+
+    return this.emp.filter(e =>
+      e.ename.toLowerCase().includes(search) ||
+      e.email.toLowerCase().includes(search) ||
+      e.designation.toLowerCase().includes(search) ||
+      e.username.toLowerCase().includes(search)
+    );
+  }
+
   deleteData(id: number): void {
-    this.cs.deleteData(id).subscribe(() => {
-      this.emp = this.emp.filter(e => e.id !== id);
-    });
+    if (confirm('Are you sure you want to delete this employee?')) {
+      this.cs.deleteData(id).subscribe(() => {
+        this.emp = this.emp.filter(e => e.id !== id);
+      });
+    }
   }
 }
