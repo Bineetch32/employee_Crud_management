@@ -1,41 +1,59 @@
-<h1 class="btn btn-success">Employee Details</h1>
+<div class="employee-page">
+  <div class="container py-4">
+    <div class="page-header">
+      <div>
+        <h1>Employee Management</h1>
+        <p>View and manage all employees in one place.</p>
+      </div>
+      <span class="employee-count">{{ getFilteredEmployees().length }} Employees</span>
+    </div>
 
-<div class="container">
-  <table class="table table-dark" border="1">
-    <thead>
-      <tr style="color: rgb(208, 205, 192)">
-        <th>ID</th>
-        <th>Name</th>
-        <th>Email</th>
-        <th>MobNO</th>
-        <th>Designation</th>
-        <th>Username</th>
-        <th>Detail & Update</th>
-        <th>Delete</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let e of emp">
-        <td>{{ e.id }}</td>
-        <td>{{ e.ename | uppercase }}</td>
-        <td>{{ e.email }}</td>
-        <td>{{ e.mobile }}</td>
-        <td>{{ e.designation }}</td>
-        <td>{{ e.username }}</td>
-        <td>
-          <a [routerLink]="['employee-detail', e.id]">Show Detail</a>
-          <a class="btn btn-primary" [routerLink]="['update']" [state]="e">
-            <i class="fa fa-edit" style="color: white"></i>
-          </a>
-        </td>
-        <td>
-          <a class="btn btn-danger" (click)="deleteData(e.id)">
-            <i class="fa fa-trash"></i>
-          </a>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+    <div class="search-box">
+      <label for="employeeSearch">Search Employee</label>
+      <input id="employeeSearch" type="text" class="form-control" [(ngModel)]="searchText"
+        placeholder="Search by name, email, designation or username">
+    </div>
+
+    <div class="table-box" *ngIf="getFilteredEmployees().length > 0; else noEmployees">
+      <div class="table-responsive">
+        <table class="table align-middle">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Mobile</th>
+              <th>Designation</th>
+              <th>Username</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let e of getFilteredEmployees()">
+              <td>{{ e.id }}</td>
+              <td><strong>{{ e.ename | uppercase }}</strong></td>
+              <td>{{ e.email }}</td>
+              <td>{{ e.mobile }}</td>
+              <td><span class="designation">{{ e.designation }}</span></td>
+              <td>{{ e.username }}</td>
+              <td class="actions">
+                <a class="btn btn-sm btn-outline-primary" [routerLink]="['employee-detail', e.id]">View</a>
+                <a class="btn btn-sm btn-primary" [routerLink]="['update']" [state]="e">Edit</a>
+                <button class="btn btn-sm btn-outline-danger" (click)="deleteData(e.id)">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <ng-template #noEmployees>
+      <div class="no-data">
+        <h3>No employees found</h3>
+        <p>Try another search or register a new employee.</p>
+      </div>
+    </ng-template>
+  </div>
 </div>
 
 <router-outlet></router-outlet>
