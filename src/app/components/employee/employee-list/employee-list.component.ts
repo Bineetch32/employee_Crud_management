@@ -37,11 +37,11 @@ export class EmployeeListComponent implements OnInit {
   }
 
   viewEmployee(id: number): void {
-    this.router.navigate(['/login/header/employee/employee-list/employee-detail', id]);
+    this.router.navigate(['/login/header/employee/employee-detail', id]);
   }
 
   editEmployee(employee: Employee): void {
-    this.router.navigate(['/login/header/employee/employee-list/update'], {
+    this.router.navigate(['/login/header/employee/update'], {
       state: employee
     });
   }
