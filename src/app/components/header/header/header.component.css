@@ -1,7 +1,17 @@
-div {
-    width: 100px;
-    /* height: 100px; */
-    background-color: rgb(26, 28, 6);
-    animation-name: header;
-    animation-duration: 4s;
+.navbar-brand {
+  font-weight: 600;
+}
+
+.nav-link {
+  margin-right: 8px;
+}
+
+.nav-link.active {
+  font-weight: 600;
+}
+
+@media screen and (max-width: 600px) {
+  .navbar .btn {
+    margin-top: 10px;
   }
+}
