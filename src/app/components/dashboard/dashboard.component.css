@@ -1,0 +1,139 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  background-color: #f5f7fb;
+}
+
+.dashboard h1,
+.dashboard h2,
+.dashboard h3,
+.dashboard p {
+  margin-top: 0;
+}
+
+.welcome-box {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+.welcome-box h1 {
+  font-size: 30px;
+  color: #222;
+  margin-bottom: 8px;
+}
+
+.welcome-box p {
+  color: #6c757d;
+  margin-bottom: 0;
+}
+
+.stat-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 22px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+.stat-card p {
+  color: #6c757d;
+  margin-bottom: 8px;
+}
+
+.stat-card h2 {
+  font-size: 32px;
+  color: #0d6efd;
+  margin-bottom: 5px;
+}
+
+.stat-card span {
+  color: #888;
+  font-size: 14px;
+}
+
+.content-box,
+.quick-box {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+.section-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.section-title h3,
+.quick-box h3 {
+  font-size: 21px;
+  color: #222;
+  margin-bottom: 5px;
+}
+
+.section-title p {
+  color: #6c757d;
+  margin-bottom: 0;
+  font-size: 14px;
+}
+
+.section-title a {
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.table th {
+  background-color: #f8f9fa;
+  color: #555;
+}
+
+.empty-message {
+  color: #777;
+  padding: 20px 0;
+  margin-bottom: 0;
+}
+
+.quick-action {
+  display: block;
+  background-color: #f8f9fa;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  padding: 18px;
+  text-decoration: none;
+  color: #222;
+}
+
+.quick-action:hover {
+  background-color: #eef4ff;
+}
+
+.quick-action strong,
+.quick-action span {
+  display: block;
+}
+
+.quick-action span {
+  color: #6c757d;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+@media screen and (max-width: 600px) {
+  .welcome-box {
+    display: block;
+  }
+
+  .welcome-box .btn {
+    margin-top: 15px;
+  }
+
+  .welcome-box h1 {
+    font-size: 24px;
+  }
+}
